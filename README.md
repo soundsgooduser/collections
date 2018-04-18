@@ -3,7 +3,7 @@ Apache Commons Collections
 JDK Collections
 
 Example1:
-    Collections.unmodifiableList, ImmutableList.of:
+    Collections.unmodifiableList, ImmutableList.of, ListUtils.unmodifiableList:
         add, remove, clear methods - throw UnsupportedOperationException
         reverse method - reverse successfully
         get method - returns object and this object is allowed to be modified

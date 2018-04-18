@@ -3,6 +3,7 @@ package collections.immutable.examples;
 import collections.immutable.model.Test;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
+import org.apache.commons.collections4.ListUtils;
 
 import java.util.Collections;
 import java.util.List;
@@ -18,14 +19,21 @@ public class Example1 {
     public static void testUnmodifiableAndImmutableLists() {
         List<Test> unmodifiableList = Collections.unmodifiableList(Lists.newArrayList(new Test("1"),
                 new Test("2"), new Test("3")));
-        System.out.println(">>>> TEST unmodifiableList <<<<");
+        System.out.println(">>>> TEST unmodifiableList JDK Collections<<<<");
         test(unmodifiableList);
 
         System.out.println();
 
         List<Test> immutableList = ImmutableList.of(new Test("1"), new Test("2"), new Test("3"));
-        System.out.println(">>>> TEST immutableList <<<<");
+        System.out.println(">>>> TEST immutableList Guava <<<<");
         test(immutableList);
+
+        System.out.println();
+
+        List<Test> unmodifiableListApache = ListUtils.unmodifiableList(Lists.newArrayList(new Test("1"),
+                new Test("2"), new Test("3")));
+        System.out.println(">>>> TEST unmodifiableListApache <<<<");
+        test(unmodifiableListApache);
     }
 
     public static void testReverse() {

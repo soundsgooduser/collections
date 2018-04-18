@@ -1,6 +1,7 @@
 package collections.immutable.examples;
 
 import com.google.common.collect.ImmutableList;
+import org.apache.commons.collections4.ListUtils;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -35,6 +36,19 @@ public class Example2 {
         print("JDK unmodifiableList");
         final List<String> originalList = buildList();
         final List<String> unmodifiableList = Collections.unmodifiableList(originalList);
+        out.println("Unmodifiable List of Strings: " + unmodifiableList);
+        originalList.remove("CA");
+        out.println("Original List of Strings: " + originalList);
+        out.println("Unmodifiable List of Strings: " + unmodifiableList);
+    }
+
+    /**
+     * Apache commons UnmodifiableList.
+     */
+    public static void apacheCommonsUnmodifiableList() {
+        print("Apache commons unmodifiableList");
+        final List<String> originalList = buildList();
+        final List<String> unmodifiableList = ListUtils.unmodifiableList(originalList);
         out.println("Unmodifiable List of Strings: " + unmodifiableList);
         originalList.remove("CA");
         out.println("Original List of Strings: " + originalList);
